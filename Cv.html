@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Maker</title>
+    <link rel="icon" href="assets/icon.svg">
+    <link rel="stylesheet" href="Cv.css">
+</head>
+<body>
+    <div class="container">
+        <div class="identity_area">
+            <img class="face" src="assets/face.png" alt="" srcset="">
+
+            <input class="name_input" type="text" id="full_name_field" placeholder="Enter full name">
+            <h2 class="name_title" id="name_title"></h2>
+            
+            <input class="job_input" type="text" id="job_field" placeholder="Enter your job">
+            <h2 class="job_title" id="job_title"></h2>
+
+            <hr>
+
+            <div class="profile_title">
+                <img class="profile_icon" src="assets/profile.png" alt="">
+                <p class="profile_header">PROFILE</p>
+            </div>
+
+            <div class="bday_area">
+                <img class="bday_icon" src="assets/bday.png" alt="">
+                <input class="bday_input" type="date" id="bday_field">
+                <p class="bday_title" id="bday_title"></p>
+            </div>
+
+            <div class="gender_area">
+                <img class="gender_icon" src="assets/gender.png" alt="">
+                <select class="gender_input" id="gender_field">
+                    <option value="Female">Gender</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                </select>
+                <p class="gender_title" id="gender_title"></p>
+            </div>
+
+            <div class="home_area">
+                <img class="home_icon" src="assets/home.png" alt="">
+                <input type="text" class="home_input" id="home_field" placeholder="Home address">
+                <p class="home_title" id="home_title"></p>
+            </div>
+
+            <div class="work_area">
+                <img class="work_icon" src="assets/work.png" alt="">
+                <input type="text" class="work_input" id="work_field" placeholder="Work address">
+                <p class="work_title" id="work_title"></p>
+            </div>
+
+            <hr class="contacts_hr">
+
+            <div class="contacts_title">
+                <img class="contacts_icon" src="assets/contacts.png" alt="">
+                <p class="contacts_header">CONTACTS</p>
+            </div>
+
+            <div class="instagram_area">
+                <img class="instagram_icon" src="assets/instagram.png" alt="">
+                <input type="text" class="instagram_input" id="instagram_field" placeholder="Your instagram">
+                <p class="instagram_title" id="instagram_title"></p>
+            </div>
+
+            <div class="gmail_area">
+                <img class="gmail_icon" src="assets/gmail.png" alt="">
+                <input type="text" class="gmail_input" id="gmail_field" placeholder="Your gmail">
+                <p class="gmail_title" id="gmail_title"></p>
+            </div>
+
+            <div class="facebook_area">
+                <img class="facebook_icon" src="assets/facebook.png" alt="">
+                <input type="text" class="facebook_input" id="facebook_field" placeholder="Your facebook">
+                <p class="facebook_title" id="facebook_title"></p>
+            </div>
+
+            <div class="linked_area">
+                <img class="linked_icon" src="assets/linkedin.png" alt="">
+                <input type="text" class="linked_input" id="linked_field" placeholder="Your linkedin">
+                <p class="linked_title" id="linked_title"></p>
+            </div>
+        </div>
+
+        <div class="description_area">
+            <div class="about_area">
+                <h2 class="about_title">ABOUT ME!</h2>
+                <textarea id="about_field" class="about_input" maxlength="600"></textarea>
+                <p class="about_content" id="about_content"></p>
+            </div>
+
+            <div class="experiences_header">
+                <h2 class="experiences_title">EXPERIENCES</h2>
+                <hr class="exp_hr">
+            </div>
+            <p class="experiences_summary">Here are a few of my most recent experiences:</p>
+            <div class="experiences_content">
+                <ul>
+                    <li class="exp_point">
+                        <input type="text" class="facebook_input" id="facebook_field" placeholder="Your facebook">
+                        <input type="text" class="facebook_input" id="facebook_field" placeholder="Your facebook">
+                    </li>
+                    <li class="exp_point"><input type="text" class="facebook_input" id="facebook_field" placeholder="Your facebook"></li>
+                    <li class="exp_point"><input type="text" class="facebook_input" id="facebook_field" placeholder="Your facebook"></li>
+                    <li class="exp_point"><input type="text" class="facebook_input" id="facebook_field" placeholder="Your facebook"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        
+    </div>
+</body>
+
+<script>
+    function submitField(fieldId, outputId) {
+        const field = document.getElementById(fieldId);
+        const output = document.getElementById(outputId);
+
+        field.addEventListener("keydown", (e) => {
+            if (e.keyCode == 13) {
+                output.innerHTML = field.value;
+                field.style.display = "none";
+                output.style.display = "block";
+            }
+        });
+    }
+
+    function handleChange(fieldId, outputId) {
+        const field = document.getElementById(fieldId);
+        const output = document.getElementById(outputId);
+
+        field.addEventListener("change", (e) => {
+            output.innerHTML = field.value;
+            field.style.display = "none";
+            output.style.display = "block";
+        })
+    }
+
+    // identity area
+    submitField("full_name_field", "name_title");
+    submitField("job_field", "job_title");
+    handleChange("bday_field", "bday_title");
+    handleChange("gender_field", "gender_title");
+    submitField("home_field", "home_title");
+    submitField("work_field", "work_title");
+    submitField("instagram_field", "instagram_title");
+    submitField("gmail_field", "gmail_title");
+    submitField("facebook_field", "facebook_title");
+    submitField("linked_field", "linked_title");
+
+    // description area
+    submitField("about_field", "about_content");
+</script>
+</html>
