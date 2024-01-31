@@ -106,7 +106,7 @@ input:focus {
 }
 
 .identity_area {
-    background-color: #f8cc4a;
+    background-color: #ffe18a;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,7 +119,7 @@ input:focus {
 }
 
 .name_input, .job_input {
-    background: #f8cc4a;
+    background: #ffe18a;
     width: 90%;
     padding: 0.5em;
     font-weight: bold;
@@ -127,6 +127,7 @@ input:focus {
     border: none;
     border-bottom: solid rgb(215, 158, 14) 2px;
     font-size: 1.6rem;
+    font-family: "Feather Bold";
 }
 
 .name_input::placeholder, .job_input::placeholder {
@@ -191,7 +192,7 @@ input:focus {
 
 .bday_input, .gender_input, .work_input, .home_input, .instagram_input,
 .gmail_input, .facebook_input, .linked_input {
-    background: #f8cc4a;
+    background: #ffe18a;
     border: solid white 1px;
     padding: 0.5em;
     margin-left: 10px;
@@ -237,13 +238,9 @@ input:focus {
     margin-bottom: 10px;
 }
 
-.experiences_header {
+.experiences_header, .abilities_header, .skills_header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    text-align: center;
-    place-items: center;
-    gap: 5px;
 }
 
 .exp_hr {
@@ -255,6 +252,30 @@ input:focus {
     font-size: 2.5rem;
     color: #7fae85;
     margin-bottom: 10px;
+}
+
+.abilities_title {
+    font-family: "Feather Bold";
+    font-size: 2.5rem;
+    color: #a0bbde;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.abilities_flex {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ability_area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    place-items: center;
 }
 
 .about_input {
@@ -285,8 +306,150 @@ input:focus {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #083947;
+}
+
+.exp_title, .exp_desc {
+    background: #F6F4E5;
+    padding: 0.5em;
+    margin-left: 10px;
+    font-family: "rounded";
+    color: #7fae85;
+    font-weight: bold;
+    width: 50%;
+    border: none;
+    border-bottom: solid #639179 2px;
+    margin-bottom: 15px;
+}
+
+.exp_title_p {
+    font-family: "Feather Bold";
+    color: #7fae85;
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: none;
+}
+
+.exp_desc_p {
+    padding: 0.5em;
+    font-family: "rounded";
+    color: #083947;
+    font-size: 1.6rem;
+    display: none;
+    max-width: 30ch;
+}
+
+.exp_desc {
+    width: 90%;
+}
+
+.exp_title::placeholder, .exp_desc::placeholder {
+    color: #7fae85;
 }
 
 .about_input:focus {
     outline: none;
+}
+
+.ability_icon {
+    width: 60%;
+    height: auto;
+    margin: 10px;
+}
+
+.ability_input {
+    width: 200%;
+    background: #F6F4E5;
+    padding: 0.5em;
+    margin-left: 10px;
+    font-family: "rounded";
+    color: #a0bbde;
+    font-weight: bold;
+    width: 50%;
+    border: none;
+    border-bottom: solid #7592bf 2px;
+    margin-bottom: 15px;
+}
+
+.ability_input::placeholder {
+    color: #a0bbde;
+}
+
+.ability_title {
+    font-family: "Feather Bold";
+    color: #7592bf;
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: none;
+}
+
+.skills_title {
+    font-family: "Feather Bold";
+    font-size: 2.5rem;
+    color: #c1a4db;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.skills_flex, .skills_flex_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    gap: 10px;
+    margin-bottom: 10px;
+    gap: 50px;
+}
+
+.skills_flex_top {
+    margin-top: 10px;
+}
+
+.progress-radial {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #F6F4E5;
+  background-color: #c1a4db;
+  border: 2px solid #083947;
+}
+
+.progress-radial .overlay {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: #F6F4E5;
+  border-radius: 50%;
+  margin-left: 13px;
+  margin-top: 15px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 16px;
+  border: 2px solid #083947;
+  font-family: "Feather Bold";
+  color: #8c6eb8;
+}
+
+.progress-25 {
+  background-image: linear-gradient(90deg, #F6F4E5 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(180deg, #c1a4db 50%, #F6F4E5 50%, #F6F4E5);
+}
+
+.progress-85 {
+  background-image: linear-gradient(36deg, #c1a4db 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #c1a4db 50%, #F6F4E5 50%, #F6F4E5);
+}
+
+.progress-90 {
+  background-image: linear-gradient(54deg, #c1a4db 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #c1a4db 50%, #F6F4E5 50%, #F6F4E5);
+}
+
+.progress-95 {
+  background-image: linear-gradient(72deg, #c1a4db 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #c1a4db 50%, #F6F4E5 50%, #F6F4E5);
+}
+
+.skill_title {
+    font-family: "Feather Bold";
+    font-size: 1.6rem;
+
 }
