@@ -340,6 +340,7 @@ input:focus {
     max-width: 70ch;
     text-align: justify;
     color: #083947;
+    overflow-wrap: break-word;
 }
 
 .experiences_summary {
@@ -378,6 +379,7 @@ input:focus {
     font-size: 1.6rem;
     display: none;
     max-width: 50ch;
+    overflow-wrap: break-word;
 }
 
 .exp_desc {
