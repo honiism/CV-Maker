@@ -84,13 +84,35 @@
                 <p class="linked_title" id="linked_title"></p>
             </div>
 
-            <hr class="contacts_hr">
+            <hr class="langs_hr">
 
-            <div class="contacts_title">
-                <img class="contacts_icon" src="assets/contacts.png" alt="">
-                <p class="contacts_header">LANGUAGES</p>
+            <div class="langs_title">
+                <img class="langs_icon" src="assets/speech.png" alt="">
+                <p class="langs_header">LANGUAGES</p>
             </div>
 
+            <div class="lang_area">
+                <img class="lang_icon" src="assets/indo.png" alt="">
+                <input type="number" class="indo_input" id="indo_field" min="0" max="100">
+
+                <div class="progress" id="progress_indo">
+                    <div class="progress_done" id="progress_done_indo"></div>
+                </div>
+            </div>
+            <div class="lang_area">
+                <img class="lang_icon" src="assets/uk.png" alt="">
+                <input type="number" class="eng_input" id="eng_field" min="0" max="100">
+
+                <div class="progress" id="progress_eng">
+                    <div class="progress_done" id="progress_done_eng"></div>
+                </div>
+            </div>
+
+            <hr class="contacts_hr">
+            <p class="footer">Maria A. (XID) & Rachel C. (XIB) <br>
+                Click enter untuk input text dan angka. <br>
+                Click shift + enter untuk pindah ke line selanjutnya.
+            </p>
         </div>
         <div class="description_area">
             <div class="about_area">
@@ -127,22 +149,22 @@
             <div class="abilities_flex">
                 <div class="ability_area">
                     <img src="assets/muscle.png" class="ability_icon">
-                    <input type="text" class="ability_input" id="ability_field1" placeholder="Ability" maxlength="10">
+                    <input type="text" class="ability_input" id="ability_field1" placeholder="1" maxlength="10">
                     <p class="ability_title" id="ability_out1"></p>
                 </div>
                 <div class="ability_area">
                     <img src="assets/brain.png" class="ability_icon">
-                    <input type="text" class="ability_input" id="ability_field2" placeholder="Ability" maxlength="10">
+                    <input type="text" class="ability_input" id="ability_field2" placeholder="2" maxlength="10">
                     <p class="ability_title" id="ability_out2"></p>
                 </div>
                 <div class="ability_area">
                     <img src="assets/sparkles.png" class="ability_icon">
-                    <input type="text" class="ability_input" id="ability_field3" placeholder="Ability" maxlength="10">
+                    <input type="text" class="ability_input" id="ability_field3" placeholder="3" maxlength="10">
                     <p class="ability_title" id="ability_out3"></p>
                 </div>
                 <div class="ability_area">
                     <img src="assets/medal.png" class="ability_icon">
-                    <input type="text" class="ability_input" id="ability_field4" placeholder="Ability" maxlength="10">
+                    <input type="text" class="ability_input" id="ability_field4" placeholder="4" maxlength="10">
                     <p class="ability_title" id="ability_out4"></p>
                 </div>
             </div>
@@ -192,6 +214,12 @@
         const output = document.getElementById(outputId);
 
         field.addEventListener("keydown", (e) => {
+            if (e.shiftKey) {
+                if (e.keyCode == 13) {
+                    return
+                };
+            }
+            
             if (e.keyCode == 13) {
                 output.innerHTML = field.value;
                 field.style.display = "none";
@@ -209,6 +237,23 @@
             field.style.display = "none";
             output.style.display = "block";
         })
+    }
+
+    function handlePercentages(progressId, progressDoneId, fieldId) {
+        const progress = document.getElementById(progressId);
+        const progressDone = document.getElementById(progressDoneId);
+        const field = document.getElementById(fieldId);
+
+        field.addEventListener("keydown", (e) => {
+            if (e.keyCode == 13) {
+                const value = parseInt(field.value);
+
+                field.style.display = "none";
+                progress.style.display = "block";
+
+                progressDone.style.width = `${(value / 100) * 100}%`;
+            }
+        });
     }
 
     // identity area
@@ -233,5 +278,8 @@
     submitField("ability_field2", "ability_out2");
     submitField("ability_field3", "ability_out3");
     submitField("ability_field4", "ability_out4");
+
+    handlePercentages("progress_indo", "progress_done_indo", "indo_field")
+    handlePercentages("progress_eng", "progress_done_eng", "eng_field")
 </script>
 </html>

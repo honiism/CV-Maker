@@ -64,7 +64,7 @@ hr {
     margin-bottom: 10px;
 }
 
-.contacts_hr {
+.contacts_hr, .langs_hr {
     margin-top: 20px;
     height: 2px;
 }
@@ -149,7 +149,7 @@ input:focus {
     font-size: 1.6rem;
 }
 
-.profile_title, .contacts_title {
+.profile_title, .contacts_title, .langs_title {
     display: flex;
     width: 90%;
     gap: 10px;
@@ -161,31 +161,32 @@ input:focus {
     height: auto;
 }
 
-.contacts_icon {
+.contacts_icon, .langs_icon {
     width: 15%;
     height: auto;
 }
 
-.profile_header, .contacts_header {
+.profile_header, .contacts_header, .langs_header {
     font-family: "Feather Bold";
     font-size: 1.6rem;
     color: #083947;
 }
 
 .bday_area, .gender_area, .home_area, .work_area, .instagram_area,
-.gmail_area, .facebook_area, .linked_area {
+.gmail_area, .facebook_area, .linked_area, .lang_area {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
     width: 90%;
+    place-items: center;
 }
 
-.linked_area {
-    margin-bottom: 10px;
+.lang_area {
+    gap: 10px;
 }
 
 .bday_icon, .gender_icon, .home_icon, .work_icon, .instagram_icon,
-.gmail_icon, .facebook_icon, .linked_icon {
+.gmail_icon, .facebook_icon, .linked_icon, .lang_icon {
     width: 15%;
     height: auto;
 }
@@ -200,6 +201,38 @@ input:focus {
     color: #083947;
     font-weight: bold;
     width: 90%;
+}
+
+.indo_input, .eng_input {
+    background: #ffe18a;
+    border: solid white 1px;
+    padding: 0.5em;
+    margin-left: 10px;
+    font-family: "rounded";
+    color: #083947;
+    font-weight: bold;
+    width: 30%;
+}
+
+.progress {
+    background-color: #F6F4E5;
+    border-radius: 20px;
+    width: 90%;
+    height: 20px;
+    display: none;
+}
+
+.progress_done {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e84d71;
+    box-shadow: 0 5px 5px -6px #9f3367 #812054;
+    border-radius: 20px;
+    color: white;
+    height: 100%;
+    width: 0;
+    transition: 1s ease 0.3s;
 }
 
 .bday_input, .gender_input {
@@ -218,6 +251,14 @@ input:focus {
     font-size: 1.6rem;
     font-weight: bold;
     display: none;
+}
+
+.lang_title {
+    padding: 0.5em;
+    font-family: "rounded";
+    color: #083947;
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 
 /** desc area **/
@@ -336,7 +377,7 @@ input:focus {
     color: #083947;
     font-size: 1.6rem;
     display: none;
-    max-width: 30ch;
+    max-width: 50ch;
 }
 
 .exp_desc {
@@ -452,4 +493,12 @@ input:focus {
     font-family: "Feather Bold";
     font-size: 1.6rem;
 
+}
+
+.footer {
+    font-family: "rounded";
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 50%;
 }
