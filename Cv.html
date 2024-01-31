@@ -83,8 +83,15 @@
                 <input type="text" class="linked_input" id="linked_field" placeholder="Your linkedin">
                 <p class="linked_title" id="linked_title"></p>
             </div>
-        </div>
 
+            <hr class="contacts_hr">
+
+            <div class="contacts_title">
+                <img class="contacts_icon" src="assets/contacts.png" alt="">
+                <p class="contacts_header">LANGUAGES</p>
+            </div>
+
+        </div>
         <div class="description_area">
             <div class="about_area">
                 <h2 class="about_title">ABOUT ME!</h2>
@@ -94,19 +101,84 @@
 
             <div class="experiences_header">
                 <h2 class="experiences_title">EXPERIENCES</h2>
-                <hr class="exp_hr">
             </div>
             <p class="experiences_summary">Here are a few of my most recent experiences:</p>
             <div class="experiences_content">
                 <ul>
                     <li class="exp_point">
-                        <input type="text" class="facebook_input" id="facebook_field" placeholder="Your facebook">
-                        <input type="text" class="facebook_input" id="facebook_field" placeholder="Your facebook">
+                        <input type="text" class="exp_title" id="exp_title_field" placeholder="Experience title" maxlength="25">
+                        <input type="text" class="exp_desc" id="exp_desc_field" placeholder="Short description" maxlength="75">
+                        <p class="exp_title_p" id="exp_title_out"></p>
+                        <p class="exp_desc_p" id="exp_desc_out"></p>
                     </li>
-                    <li class="exp_point"><input type="text" class="facebook_input" id="facebook_field" placeholder="Your facebook"></li>
-                    <li class="exp_point"><input type="text" class="facebook_input" id="facebook_field" placeholder="Your facebook"></li>
-                    <li class="exp_point"><input type="text" class="facebook_input" id="facebook_field" placeholder="Your facebook"></li>
+                    <li class="exp_point">
+                        <input type="text" class="exp_title" id="exp_title_field2" placeholder="Experience title" maxlength="25">
+                        <input type="text" class="exp_desc" id="exp_desc_field2" placeholder="Short description" maxlength="75">
+                        <p class="exp_title_p" id="exp_title_out2"></p>
+                        <p class="exp_desc_p" id="exp_desc_out2"></p>
+                    </li>
                 </ul>
+            </div>
+
+            <div class="abilities_header">
+                <h2 class="abilities_title">ABILITIES</h2>
+            </div>
+            <p class="experiences_summary">Here are a few of my abilities:</p>
+            <div class="abilities_flex">
+                <div class="ability_area">
+                    <img src="assets/muscle.png" class="ability_icon">
+                    <input type="text" class="ability_input" id="ability_field1" placeholder="Ability" maxlength="10">
+                    <p class="ability_title" id="ability_out1"></p>
+                </div>
+                <div class="ability_area">
+                    <img src="assets/brain.png" class="ability_icon">
+                    <input type="text" class="ability_input" id="ability_field2" placeholder="Ability" maxlength="10">
+                    <p class="ability_title" id="ability_out2"></p>
+                </div>
+                <div class="ability_area">
+                    <img src="assets/sparkles.png" class="ability_icon">
+                    <input type="text" class="ability_input" id="ability_field3" placeholder="Ability" maxlength="10">
+                    <p class="ability_title" id="ability_out3"></p>
+                </div>
+                <div class="ability_area">
+                    <img src="assets/medal.png" class="ability_icon">
+                    <input type="text" class="ability_input" id="ability_field4" placeholder="Ability" maxlength="10">
+                    <p class="ability_title" id="ability_out4"></p>
+                </div>
+            </div>
+
+            <div class="skills_header">
+                <h2 class="skills_title">SOFTWARE SKILLS</h2>
+            </div>
+            <p class="experiences_summary">Here are a few of my software skills:</p>
+            <div class="skills_flex_top">
+                <div class="ability_area">
+                    <div class="progress-radial progress-90">
+                        <div class="overlay">90%</div>
+                    </div>
+                    <p class="skill_title">HTML</p>
+                </div>
+                
+                <div class="ability_area">
+                    <div class="progress-radial progress-90">
+                        <div class="overlay">90%</div>
+                    </div>
+                    <p class="skill_title">CSS</p>
+                </div>
+            </div>
+            <div class="skills_flex">
+                <div class="ability_area">
+                    <div class="progress-radial progress-85">
+                        <div class="overlay">85%</div>
+                    </div>
+                    <p class="skill_title">JavaScript</p>
+                </div>
+                <div class="ability_area">
+                    <div class="progress-radial progress-95">
+                        <div class="overlay">95%</div>
+                    </div>
+                    <p class="skill_title">Java</p>
+                </div>
             </div>
         </div>
     </div>
@@ -153,5 +225,13 @@
 
     // description area
     submitField("about_field", "about_content");
+    submitField("exp_title_field", "exp_title_out");
+    submitField("exp_desc_field", "exp_desc_out");
+    submitField("exp_title_field2", "exp_title_out2");
+    submitField("exp_desc_field2", "exp_desc_out2");
+    submitField("ability_field1", "ability_out1");
+    submitField("ability_field2", "ability_out2");
+    submitField("ability_field3", "ability_out3");
+    submitField("ability_field4", "ability_out4");
 </script>
 </html>
